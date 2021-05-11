@@ -7,15 +7,44 @@
     
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/main.css" rel="stylesheet">
-    <title> Autorization</title>
+    <title>Registration</title>
 </head>
 <body>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/main">Broad system</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/main/autorization">Autorization
+            <span class="visually-hidden"></span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/main/registration">Registration
+            <span class="visually-hidden"></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
     <div class="center">
         <div class="form-group">Login<input type="text" class="form-control change" id="login" placeholder="login"></div>
         <div class="form-group">Password<input type="password" class="form-control change" id="password" placeholder="password"></div>
-        <div class="form-group">Check Password<input type="password" class="form-control change" id="password" placeholder="password"></div>
+        <h6 id = "first_check"></h6>
+        <div class="form-group">Check Password<input type="password" class="form-control change" id="check_password" placeholder="password"></div>
+        <h6 id="second_check"></h6>
         <div class="form-group">Status
-            <select class="form-select" id="exampleSelect1">
+            <select class="form-select" id="selector">
                 <option value="admin">admin</option>
                 <option value="user">user</option>
             </select>
@@ -23,4 +52,5 @@
         <button type="button" id="button" class="btn btn-outline-primary button">Registration</button>
     </div>
 </body>
+<script src="/js/registration.js"></script>
 </html>
