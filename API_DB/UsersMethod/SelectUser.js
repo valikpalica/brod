@@ -1,13 +1,16 @@
-const mysql = require('./connection');
+const mysql = require('../connection');
  
-const getAllUser = async (login,password) =>{
-    mysql.query('select * from user where login = ? and password = ?;',[login,password],(err,result)=>{
+const getAllUser = async (obj) =>{
+   return new Promise((res,rej)=>{
+    let {username} = obj;
+    mysql.query('select * from user where login = ?;',[username],(err,result) =>{
         if(err){
-            throw new Error(err);
+            rej(new Error(err));
         }
         else{
-            return result;
+            res(result);
         }
     });
+   })
 };
 module.exports = getAllUser;

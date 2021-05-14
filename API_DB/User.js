@@ -1,22 +1,21 @@
 const select = require('./UsersMethod/SelectUser')
 const insert = require('./UsersMethod/InserUser');
 
-
 const  User  = class {
     registration(obj,callback){
         insert(obj).then(data=>{
             callback(data);
         }).catch(err=>{
-            console.log(err);
+            console.error(err);
         })
     };
-    find(login,password,callback){
-     select(login,password).then(data=>{
-         callback(data);
+    find(obj,callback){
+     select(obj).then(data=>{
+         callback(data[0]);
      }).catch(err=>{
-         console.log(err);
+         console.error(err);
      })
     }
 } 
 
-module.exports = User;
+module.exports = new User;
