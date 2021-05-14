@@ -3,7 +3,7 @@ const main_route = express.Router();
 const passport = require('passport');
 const {Autorization,Registration} = require('../Controllers/AllControllers');
 const {Autorization_render, Registration_render} = require('../RenderHBS/index');
-
+const checkAuthenticated = require('./checkAuthenticated');
 
 main_route.get('/autorization',Autorization_render);
 
@@ -20,11 +20,6 @@ main_route.get('/test',checkAuthenticated,(req,res)=>{
     res.send('Autorization on system');
 })
 
-function checkAuthenticated(req, res, next) {
-    if (req.isAuthenticated()) {
-        return next()
-    }
-    res.redirect('/main/autorization')
-}
+
 
 module.exports = main_route;
