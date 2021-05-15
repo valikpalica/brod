@@ -1,12 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const checkAuthenticated = require('./checkAuthenticated');
+const {AllPeople_render,AllCountry_render} = require('../RenderHBS/index');
 
-router.get('/allPerson',(req,res)=>{
-    res.render('allPerson.hbs');
-})
-router.get('/allCountry',(req,res)=>{
-    res.render('allCountry.hbs');
-})
+router.get('/allPerson',AllPeople_render);
+router.get('/allCountry',AllCountry_render);
 
 module.exports = router;

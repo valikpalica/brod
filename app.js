@@ -7,6 +7,7 @@ const flash = require('express-flash');
 const session = require('express-session');
 const main_route = require('./Router/autorization_system');
 const page_route = require('./Router/page');
+const admin_route = require('./Router/dataforAdmin');
 const cookieParser = require('cookie-parser');
 const _location = __dirname;
 app.use(parser.urlencoded({extended:false}));
@@ -29,6 +30,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use('/main',main_route);
 app.use('/page',page_route);
+app.use('/admin',admin_route);
+
 app.listen(8080,()=>{
     console.log('server has been started port 8080');
 });

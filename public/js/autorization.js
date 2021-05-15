@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", (event)=>{
         headers:{
             'Content Type':'application/json'
         },
-        body:JSON.stringify(obj)
+        body:JSON.stringify({obj})
     }).then(data=> data.json()).then(answer =>{
         if(answer){
             alert('DONE');

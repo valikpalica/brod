@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", (event)=>{
-    document.getElementById('button').addEventListener('click',fetch_res);
+    document.getElementById('button').addEventListener('click',responseReg);
     document.getElementById('password').addEventListener('change',(event)=>{
         let password = document.getElementById('password').value;
         let information = document.getElementById('first_check');
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", (event)=>{
 
 
 
-const fetch_res = (event) =>{
+const responseReg = (event) =>{
     event.preventDefault();
         let login = document.getElementById('login').value
         let password = document.getElementById('password').value
@@ -51,12 +51,16 @@ const fetch_res = (event) =>{
             status,
         }
         fetch('/main/registration',{
-            method:'POST',
-            headers:{
-                'Content Type':'application/json'
-            },
-            body:JSON.stringify(obj)
-        }).then(res=> res.json()).then(answer=>{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+                
+              },
+              body: JSON.stringify(obj)
+        }).then(res=> {
+            console.log(res)
+           return res.json();
+        }).then(answer=>{
             if(answer){
                 alert('DONE');
             }
@@ -64,6 +68,7 @@ const fetch_res = (event) =>{
                 alert('Not correct');
             }
         }).catch(err=>{
+            console.log(err);
             alert('We have error with server')
         })
 }
