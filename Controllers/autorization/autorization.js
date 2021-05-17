@@ -4,7 +4,7 @@ module.exports = async (req,res) =>{
     let {username} = req.body; 
     autorization_funk({username}).then(user=>{
         res.cookie('status',user.status,{
-            maxAge: 3600 * 24,
+            maxAge: 3600 * 24 * 1000,
         });
         res.redirect('/page/allPerson');
     }).catch(err=>{

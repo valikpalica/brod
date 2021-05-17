@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `country`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `country` (
-  `id_country` int(11) NOT NULL,
+  `id_country` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(30) NOT NULL,
   PRIMARY KEY (`id_country`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -102,7 +102,7 @@ DROP TABLE IF EXISTS `travel`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `travel` (
-  `id_travel` int(11) NOT NULL,
+  `id_travel` int(11) NOT NULL AUTO_INCREMENT,
   `country_id` int(11) NOT NULL,
   `person_id` int(11) NOT NULL,
   `date` varchar(30) NOT NULL,

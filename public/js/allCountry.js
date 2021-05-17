@@ -12,17 +12,19 @@ document.addEventListener('DOMContentLoaded',(event)=>{
 })
 
 const responseAdmin = () =>{
-    fetch('/admin/allPeople').then(response=>{
+    fetch('/admin/addCountry').then(response=>{
         return response.json();
     }).then(user=>{
+        console.log(user);
         createTableAdmin(user);
     });
 }
 
 const responseUser=()=>{
-    fetch('/admin/allPeople').then(response=>{
+    fetch('/admin/addCountry').then(response=>{
         return response.json();
     }).then(user=>{
+        console.log(user);
         createTableUser(user);
     });
 }
@@ -33,19 +35,12 @@ const createTableUser = (array) =>{
     let thead = document.createElement('thead');
     let tr = document.createElement('tr');
     let th1 = document.createElement('th');
-    let th2 = document.createElement('th');
-    let th3 = document.createElement('th');
-    
     th1.scope = 'col'
     th1.textContent = 'Name'
-    th2.scope = 'col'
-    th2.textContent = 'Surname'
-    th3.scope = 'col'
-    th3.textContent = 'Nationality'
+    
 
     tr.append(th1);
-    tr.append(th2);
-    tr.append(th3);
+    
 
     thead.append(tr);
     table.append(thead);
@@ -56,13 +51,7 @@ const createTableUser = (array) =>{
         let thb1 = document.createElement('td');
         thb1.scope = 'row'
         thb1.textContent = array[i].name;
-        let tdb1 = document.createElement('td');
-        tdb1.textContent = array[i].surname;
-        let tdb2 = document.createElement('td');
-        tdb2.textContent = array[i].nationality;
         trb.append(thb1);
-        trb.append(tdb1);
-        trb.append(tdb2);
         tbody.append(trb);
     }
     table.append(tbody);
@@ -73,20 +62,12 @@ const createTableAdmin = (array) =>{
         let thead = document.createElement('thead');
         let tr = document.createElement('tr');
         let th1 = document.createElement('th');
-        let th2 = document.createElement('th');
-        let th3 = document.createElement('th');
         let th4 = document.createElement('th');
         th1.scope = 'col'
         th1.textContent = 'Name'
-        th2.scope = 'col'
-        th2.textContent = 'Surname'
-        th3.scope = 'col'
-        th3.textContent = 'Nationality'
         th4.scope = 'col' 
         th4.textContent = 'Option'
         tr.append(th1);
-        tr.append(th2);
-        tr.append(th3);
         tr.append(th4);
         thead.append(tr);
         table.append(thead);
@@ -97,10 +78,6 @@ const createTableAdmin = (array) =>{
             let thb1 = document.createElement('td');
             thb1.scope = 'row'
             thb1.textContent = array[i].name;
-            let tdb1 = document.createElement('td');
-            tdb1.textContent = array[i].surname;
-            let tdb2 = document.createElement('td');
-            tdb2.textContent = array[i].nationality;
             let tdb3 = document.createElement('td');
             let buttonInfo = document.createElement('button');
             buttonInfo.type = 'button';
@@ -108,20 +85,18 @@ const createTableAdmin = (array) =>{
             buttonInfo.style.marginRight = '5px';
             buttonInfo.textContent = 'Information';
             buttonInfo.addEventListener('click',()=>{
-                Information(array[i].id_person);
+                Information(array[i].id_country);
             })
             let buttonRemove = document.createElement('button');
             buttonRemove.type = 'button';
             buttonRemove.className = 'btn btn-danger';
-            buttonRemove.textContent = 'Remove';
+            buttonRemove.textContent = 'Block';
             buttonRemove.addEventListener('click',()=>{
-                Remove(array[i].id_person);
+                Remove(array[i].id_country);
             })
             tdb3.append(buttonInfo);
             tdb3.append(buttonRemove);
             trb.append(thb1);
-            trb.append(tdb1);
-            trb.append(tdb2);
             trb.append(tdb3);
             tbody.append(trb);
         }
