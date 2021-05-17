@@ -113,7 +113,7 @@ const createTableAdmin = (array) =>{
             let buttonRemove = document.createElement('button');
             buttonRemove.type = 'button';
             buttonRemove.className = 'btn btn-danger';
-            buttonRemove.textContent = 'Remove';
+            buttonRemove.textContent = 'Block';
             buttonRemove.addEventListener('click',()=>{
                 Remove(array[i].id_person);
             })

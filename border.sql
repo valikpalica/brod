@@ -46,7 +46,7 @@ DROP TABLE IF EXISTS `enable`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `enable` (
-  `id_enable` int(11) NOT NULL,
+  `id_enable` int(11) NOT NULL AUTO_INCREMENT,
   `country_id` int(11) NOT NULL,
   `person_id` int(11) NOT NULL,
   `status` varchar(30) NOT NULL,
