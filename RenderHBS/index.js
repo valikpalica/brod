@@ -16,4 +16,10 @@ const AddPerson = (req,res) =>{
 const AddCountry = (req,res) =>{
     res.render('addCountry.hbs');
 }
-module.exports = {Autorization_render,Registration_render,AllPeople_render,AllCountry_render,AddPerson,AddCountry};
+const InfoPerson = (req,res)=>{
+    res.render('InfoPerson.hbs',{id:req.params['id']});
+}
+const InfoCountry = (req,res)=>{
+    res.render('InfoCountry.hbs',{id:req.params['id']});
+}
+module.exports = {Autorization_render,Registration_render,AllPeople_render,AllCountry_render,AddPerson,AddCountry,InfoPerson,InfoCountry};

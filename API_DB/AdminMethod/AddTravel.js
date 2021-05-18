@@ -1,8 +1,9 @@
 const mysql = require('../connection');
 
-const GetAllCountry = () =>{
+const addTravel = (obj) =>{
+    let {country_id,peron_id,date} = obj;
     return new Promise((res,rej)=>{
-        mysql.query('select * from country;',(err,result) =>{
+        mysql.query('insert into travel (country_id,person_id,date) values (?,?,?)',[country_id,peron_id,date],(err,result) =>{
             if(err){
                 rej(new Error(err));
             }
@@ -12,4 +13,4 @@ const GetAllCountry = () =>{
         });
        })
 } 
-module.exports = GetAllCountry;
+module.exports = addTravel;

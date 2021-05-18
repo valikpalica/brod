@@ -79,7 +79,7 @@ CREATE TABLE `person` (
   `name` varchar(30) NOT NULL,
   `surname` varchar(30) NOT NULL,
   `patronime` varchar(30) NOT NULL,
-  `date` varchar(30) NOT NULL,
+  `date` date NOT NULL,
   `nationality` varchar(30) NOT NULL,
   PRIMARY KEY (`id_person`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -105,7 +105,7 @@ CREATE TABLE `travel` (
   `id_travel` int(11) NOT NULL AUTO_INCREMENT,
   `country_id` int(11) NOT NULL,
   `person_id` int(11) NOT NULL,
-  `date` varchar(30) NOT NULL,
+  `date` date NOT NULL,
   PRIMARY KEY (`id_travel`),
   KEY `country_id` (`country_id`),
   KEY `person_id` (`person_id`),

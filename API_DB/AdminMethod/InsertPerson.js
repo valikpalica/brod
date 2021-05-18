@@ -13,4 +13,4 @@ const insertPerson = (obj) =>{
         });
        })
 } 
-module.exports = insertPerson;
+module.exports = insertPerson; 

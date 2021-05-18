@@ -110,15 +110,7 @@ const createTableAdmin = (array) =>{
             buttonInfo.addEventListener('click',()=>{
                 Information(array[i].id_person);
             })
-            let buttonRemove = document.createElement('button');
-            buttonRemove.type = 'button';
-            buttonRemove.className = 'btn btn-danger';
-            buttonRemove.textContent = 'Block';
-            buttonRemove.addEventListener('click',()=>{
-                Remove(array[i].id_person);
-            })
             tdb3.append(buttonInfo);
-            tdb3.append(buttonRemove);
             trb.append(thb1);
             trb.append(tdb1);
             trb.append(tdb2);
@@ -127,9 +119,6 @@ const createTableAdmin = (array) =>{
         }
         table.append(tbody);
 }
-const Remove = (id) =>{
-    console.log(id);
-}
 const Information = (id) =>{
-    console.log(id);
+    window.location.href = `/page/infoPerson/${id}`;
 }
