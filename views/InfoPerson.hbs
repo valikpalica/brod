@@ -60,41 +60,27 @@
 
 </div>
 <div class="functional">
-    <button type="button" class="btn btn-primary functional_button">Add Travel</button>
-    <button type="button" class="btn btn-primary functional_button">Block Country</button>
+    <button type="button" class="btn btn-primary functional_button" id="addtr">Add Travel</button>
+    <button type="button" class="btn btn-primary functional_button"  id="addbl" >Block Country</button>
     
-<div class="card text-white bg-success mb-3 grid-item" >
+<div class="card text-white bg-success mb-3 grid-item"  id="visibleAdd" >
   <div class="card-header">Add Travel</div>
   <div class="card-body">
-    <div class="form-group">
-      <select class="form-select" id="exampleSelect1">
-        <option>UK</option>
-        <option>USA</option>
-        <option>Brazil</option>
-        <option>Ukraine</option>
-        <option>Germany</option>
-      </select>
+    <div class="form-group" id="countryAddselector">
     </div>
     <label for="date_travel" class="form-label mt-4">Date Travel</label>
      <input type="text" class="form-control change" id="date_travel" name="date birthday" placeholder="Date Travel">
   </div>
-  <button type="button" class="btn btn-primary">Primary</button>
+  <button type="button" class="btn btn-primary" id="saveTravel">Save</button>
 </div>
 
-  <div class="card text-white bg-success mb-3 grid-item" >
+  <div class="card text-white bg-success mb-3 grid-item"  id="visibleblock">
   <div class="card-header">Block Country</div>
   <div class="card-body">
-    <div class="form-group">
-      <select class="form-select" id="exampleSelect1">
-        <option>UK</option>
-        <option>USA</option>
-        <option>Brazil</option>
-        <option>Ukraine</option>
-        <option>Germany</option>
-      </select>
+    <div class="form-group" id="countryBlock" >
     </div>
   </div>
-  <button type="button" class="btn btn-primary">Primary</button>
+  <button type="button" class="btn btn-primary" id="blockTravel">Save</button>
 </div>
 
 </div>
