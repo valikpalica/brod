@@ -3,3 +3,29 @@
     margin: 30px auto;
     text-align: center;
 }
+.cardInfoPerson{
+    width: 30%;
+    margin: 30px auto;
+    text-align: center;
+}
+.grid-container{
+    width: 80%;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 50px
+}
+.grid-item{
+    text-align: center;
+}
+.functional{
+    width: 30%;
+    margin: 30px auto;
+    text-align: center;
+    
+}
+.functional_button{
+    width: 150px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}

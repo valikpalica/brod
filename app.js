@@ -31,7 +31,6 @@ app.use(passport.session());
 app.use('/main',main_route);
 app.use('/page',page_route);
 app.use('/admin',admin_route);
-
 app.listen(8080,()=>{
     console.log('server has been started port 8080');
 });

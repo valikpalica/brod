@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded',(event)=>{
 })
 
 const responseAdmin = () =>{
-    fetch('/admin/addCountry').then(response=>{
+    fetch('/admin/allCountry').then(response=>{
         return response.json();
     }).then(user=>{
         console.log(user);
@@ -21,7 +21,7 @@ const responseAdmin = () =>{
 }
 
 const responseUser=()=>{
-    fetch('/admin/addCountry').then(response=>{
+    fetch('/admin/allCountry').then(response=>{
         return response.json();
     }).then(user=>{
         console.log(user);
