@@ -6,6 +6,8 @@ const BlockCountry = require('./AdminMethod/blockCountry');
 const AddTravel = require('./AdminMethod/AddTravel');
 const infoCountry = require('./AdminMethod/InfoCountry');
 const infoPerson = require('./AdminMethod/InfoPerson');
+const selectBlockCountry = require('./AdminMethod/GetBlockCountry');
+const selectEnableCountry = require('./AdminMethod/getEnableCountry');
 const Admin = class {
     getAllPeople(callback){
         selectAll().then(data=>{
@@ -58,6 +60,20 @@ const Admin = class {
     }
     selectInfoPerson(obj,callback){
         infoPerson(obj).then(data=>{
+            callback(data);
+        }).catch(err=>{
+            console.error(err);
+        })
+    }
+    getBlockCountry(obj,callback){
+        selectBlockCountry(obj).then(data=>{
+            callback(data);
+        }).catch(err=>{
+            console.error(err);
+        })
+    }
+    getEnableCountry(obj,callback){
+        selectEnableCountry(obj).then(data=>{
             callback(data);
         }).catch(err=>{
             console.error(err);

@@ -8,6 +8,8 @@ const BlockCountry = require('./admin/blockCountry');
 const AddTravel = require('./admin/addTravel');
 const InfoCountry = require('./admin/InforamtionCountry');
 const InfoPerson = require('./admin/informationPerson');
+const DisabledCountry = require('./admin/getBlockCountry');
+const EnableCountry = require('./admin/getEnableCountry');
 
 
-module.exports = {Autorization,Registration,GetAllPeople,InsertPeroson,InsertCountry,GetAllCountry,BlockCountry,AddTravel,InfoCountry,InfoPerson};
+module.exports = {Autorization,Registration,GetAllPeople,InsertPeroson,InsertCountry,GetAllCountry,BlockCountry,AddTravel,InfoCountry,InfoPerson,DisabledCountry,EnableCountry};
