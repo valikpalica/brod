@@ -10,6 +10,7 @@ const page_route = require('./Router/page');
 const admin_route = require('./Router/dataforAdmin');
 const cookieParser = require('cookie-parser');
 const _location = __dirname;
+const checkAuthenticated = require('./Router/checkAuthenticated')
 app.use(parser.urlencoded({extended:false}));
 app.use(parser.json());
 app.use(cookieParser('secret key'))
@@ -29,8 +30,8 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use('/main',main_route);
-app.use('/page',page_route);
-app.use('/admin',admin_route);
+app.use('/page',checkAuthenticated,page_route);
+app.use('/admin',checkAuthenticated,admin_route);
 app.listen(8080,()=>{
     console.log('server has been started port 8080');
 });

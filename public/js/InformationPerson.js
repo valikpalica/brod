@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded',(event)=>{
     }).then(data=>{
         return data.json();
     }).then(response=>{
-
         createMainInfo(response.person[0]);
         hid();
         createCardCountry(response.countrys);
@@ -24,8 +23,6 @@ document.addEventListener('DOMContentLoaded',(event)=>{
         }).then(response=>{
                 return response.json();
         }).then(data=>{
-            
-            hid();
             let countryAdd = document.getElementById('countryAddselector');
             countryAdd.append(createSelector(data,'addTravel')); 
         }).catch(err=>{console.error(err)})
@@ -39,8 +36,7 @@ document.addEventListener('DOMContentLoaded',(event)=>{
         }).then(response=>{
             return response.json();
         }).then(data=>{
-           
-            visible();
+            
             let countryblock = document.getElementById('countryBlock');
             countryblock.append(createSelector(data,'blockBountry'));
         }).catch(err=>{
@@ -56,7 +52,7 @@ document.addEventListener('DOMContentLoaded',(event)=>{
         }).then(response=>{
             return response.json();
         }).then(data=>{
-            hid();
+            
             createDisableCard(data);
         }).catch(err=>{
             console.error(err);
@@ -64,7 +60,6 @@ document.addEventListener('DOMContentLoaded',(event)=>{
     })
     .catch(err=>{console.error(err)})
 })
-
 
 const createDisableCard = (country)=>{
     let card = document.getElementById('countryDisable');
@@ -148,7 +143,6 @@ const visible  = (parametrs) =>{
             country.hidden =  true;
         }
     }
-     
 }
 
 document.getElementById('addtr').addEventListener('click',()=>{

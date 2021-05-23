@@ -16,10 +16,6 @@ main_route.get('/registration',Registration_render);
 
 main_route.post('/registration',Registration);
 
-main_route.get('/test',checkAuthenticated,(req,res)=>{
-    res.send('Autorization on system');
-})
-
 
 
 module.exports = main_route;
