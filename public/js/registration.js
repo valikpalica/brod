@@ -63,6 +63,7 @@ const responseReg = (event) =>{
         }).then(answer=>{
             if(answer){
                 alert('DONE');
+                window.location.href = '/main/autorization';
             }
             else{
                 alert('Not correct');
